@@ -1,3 +1,13 @@
-[sqlfluff]
-templater = dbt
-dialect = snowflake
+[sqlfluff:templater:dbt]
+apply_dbt_builtins = true
+profile = my_dbt_profile
+project_dir = ./my_dbt_project
+profiles_dir = ~/.dbt
+
+[sqlfluff:indentation]
+indented_joins = False
+indented_using_on = True
+template_blocks_indent = False
+
+[sqlfluff:rules:capitalisation]
+keywords = lower
